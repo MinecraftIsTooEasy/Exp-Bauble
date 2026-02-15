@@ -1,5 +1,6 @@
 package limingzxc.exp_baubles.items;
 
+import baubles.creativetab.BaublesCreativeTab;
 import limingzxc.exp_baubles.ExpBaubles;
 import limingzxc.exp_baubles.items.Belt.GoldBelt;
 import limingzxc.exp_baubles.items.amulet.MithrilAmulet;
@@ -8,7 +9,6 @@ import limingzxc.exp_baubles.items.ring.*;
 import limingzxc.exp_baubles.items.amulet.SilverAmulet;
 import limingzxc.exp_baubles.util.Config;
 import net.minecraft.Block;
-import net.minecraft.CreativeTabs;
 import net.minecraft.Item;
 import net.minecraft.ItemStack;
 import net.xiaoyu233.fml.reload.event.ItemRegistryEvent;
@@ -26,15 +26,15 @@ public class Items {
     public static final Item MITHRIL_AMULET = new MithrilAmulet(Config.MITHRIL_AMULET_ID.get());
 
     public static void registerItems(ItemRegistryEvent event) {
-        event.register(ExpBaubles.modID, "copper_ring", COPPER_RING, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "silver_amulet", SILVER_AMULET, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "gold_belt", GOLD_BELT, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "dirt_ring", DIRT_RING, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "clay_ring", CLAY_RING, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "dragon_ring", DRAGON_RING, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "iron_ring", IRON_RING, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "night_vision_goggle", NIGHT_VISION_GOGGLES, CreativeTabs.tabTools);
-        event.register(ExpBaubles.modID, "mithril_amulet", MITHRIL_AMULET, CreativeTabs.tabTools);
+        event.register(ExpBaubles.modID, "copper_ring", COPPER_RING, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "silver_amulet", SILVER_AMULET, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "gold_belt", GOLD_BELT, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "dirt_ring", DIRT_RING, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "clay_ring", CLAY_RING, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "dragon_ring", DRAGON_RING, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "iron_ring", IRON_RING, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "night_vision_goggle", NIGHT_VISION_GOGGLES, BaublesCreativeTab.TAB);
+        event.register(ExpBaubles.modID, "mithril_amulet", MITHRIL_AMULET, BaublesCreativeTab.TAB);
     }
 
     public static void registerRecipes(RecipeRegistryEvent event) {

@@ -8,7 +8,7 @@
   },
   "environment": "*",
   "name": "Exp-Baubles",
-  "description": "",
+  "description": "Add a series of uncanny baubles.",
   "authors": ["limingzxc"],
   "entrypoints": {
     "preLaunch": ["limingzxc.exp_baubles.ExpBaubles"],
@@ -23,4 +23,3 @@
     }
   }
 }
-
