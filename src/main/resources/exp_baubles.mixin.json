@@ -1,0 +1,25 @@
+{
+  "compatibilityLevel": "JAVA_17",
+  "package": "limingzxc.exp_baubles.mixin",
+  "required": true,
+  "target": "DEFAULT",
+  "minVersion": "0.8.3",
+  "mixins": [
+    "BlockMixin",
+    "DamageMixin",
+    "EntityAnimalMixin",
+    "EntityBatMixin",
+    "EntityDamageSourceMixin",
+    "EntityLivingBaseMixin",
+    "EntityMixin",
+    "EntityPigZombieMixin",
+    "EntityWitchMixin",
+    "FoodStatsMixin",
+    "GuiContainerMixin",
+    "ItemRingMixin",
+    "ItemRockMixin",
+    "ItemToolMixin",
+    "SlotCraftingMixin",
+    "WorldGenDungeonsMixin"
+  ]
+}

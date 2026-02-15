@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "exp_baubles",
+  "version": "${version}",
+  "depends": {
+    "fishmodloader": ">=3.3.0",
+    "baubles": ">=1.0.5"
+  },
+  "environment": "*",
+  "name": "Exp-Baubles",
+  "description": "",
+  "authors": ["limingzxc"],
+  "entrypoints": {
+    "preLaunch": ["limingzxc.exp_baubles.ExpBaubles"],
+    "main": ["limingzxc.exp_baubles.ExpBaubles"]
+  },
+  "mixins": [
+    "exp_baubles.mixin.json"
+  ],
+  "accessWidener": "exp_baubles.accesswidener",
+  "custom": {
+    "loom:injected_interfaces": {
+    }
+  }
+}
+

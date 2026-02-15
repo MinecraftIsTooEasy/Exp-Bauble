@@ -1,0 +1,24 @@
+item.copper_ring.name=Copper Ring
+item.dirt_ring.name=Eating Dirt Ring
+item.clay_ring.name=Clay Ring
+item.dragon_ring.name=Dragon Ring
+item.iron_ring.name=Iron Ring
+
+item.silver_amulet.name=Silver Amulet
+item.night_vision_goggle.name=Night Vision Goggle
+item.mithril_amulet.name=Mithril Amulet
+
+item.gold_belt.name=Gold Belt
+
+item.ring.description=Give players an haste effect
+item.copper_ring.description=It makes your armor harder but more brittle.
+item.dirt_ring.description=It expands your stomach a bit.
+item.clay_ring.description=It makes you sticky.
+item.dragon_ring.description=It draws the power of the Ender Dragon's flight but requires a vast amount of experience to sustain.
+item.iron_ring.description=It reduces the damage taken by your armor and weapons.
+
+item.silver_amulet.description=It is effective against the undead and also scares off "vampires."
+item.night_vision_goggle.description=A vision enhancement.
+item.mithril_amulet.description=It grants you more experience gained during combat and mining.
+
+item.gold_belt.description=It makes you look "shiny" and insulates you from some magma, but it can cause burns.
