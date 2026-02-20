@@ -1,4 +1,4 @@
-package limingzxc.exp_baubles.items.amulet;
+package limingzxc.exp_baubles.items.head;
 
 import baubles.api.BaubleType;
 import limingzxc.exp_baubles.items.ItemExpBaubles;
@@ -11,7 +11,7 @@ public class NightVisionGoggles extends ItemExpBaubles {
 
     @Override
     public BaubleType getBaubleType(ItemStack itemstack) {
-        return BaubleType.AMULET;
+        return BaubleType.HEAD;
     }
 
     @Override

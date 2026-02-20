@@ -1,7 +1,7 @@
 package limingzxc.exp_baubles.mixin;
 
-import baubles.api.BaublesApi;
-import limingzxc.exp_baubles.items.ring.IronRing;
+import baubles.api.BaubleSlotHelper;
+import limingzxc.exp_baubles.items.Items;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -25,12 +25,9 @@ public abstract class ItemToolMixin {
         }
         float toolDecayFromAttackingEntity = this.getToolDecayFromAttackingEntity(par1ItemStack, par2EntityLivingBase);
         if (par3EntityLivingBase instanceof EntityPlayer player) {
-            ItemStack itemStack1 = BaublesApi.getBaubles(player).getStackInSlot(1);
-            ItemStack itemStack2 = BaublesApi.getBaubles(player).getStackInSlot(2);
-            if (itemStack1 != null && itemStack1.getItem() instanceof IronRing) {
-                toolDecayFromAttackingEntity *= 0.8F;
-            }
-            if (itemStack2 != null && itemStack2.getItem() instanceof IronRing) {
+            int ironRingCount = BaubleSlotHelper.countRingsOfType(player, Items.IRON_RING);
+            // Each iron ring reduces tool decay by 20% (multiply by 0.8)
+            for (int i = 0; i < ironRingCount; i++) {
                 toolDecayFromAttackingEntity *= 0.8F;
             }
         }

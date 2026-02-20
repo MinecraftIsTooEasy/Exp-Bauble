@@ -4,7 +4,7 @@ import baubles.creativetab.BaublesCreativeTab;
 import limingzxc.exp_baubles.ExpBaubles;
 import limingzxc.exp_baubles.items.Belt.GoldBelt;
 import limingzxc.exp_baubles.items.amulet.MithrilAmulet;
-import limingzxc.exp_baubles.items.amulet.NightVisionGoggles;
+import limingzxc.exp_baubles.items.head.NightVisionGoggles;
 import limingzxc.exp_baubles.items.ring.*;
 import limingzxc.exp_baubles.items.amulet.SilverAmulet;
 import limingzxc.exp_baubles.util.Config;

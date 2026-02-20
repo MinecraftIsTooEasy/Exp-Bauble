@@ -1,7 +1,7 @@
 package limingzxc.exp_baubles.mixin;
 
-import baubles.api.BaublesApi;
-import limingzxc.exp_baubles.items.ring.ClayRing;
+import baubles.api.BaubleSlotHelper;
+import limingzxc.exp_baubles.items.Items;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,12 +17,8 @@ public abstract class EntityAnimalMixin extends EntityAgeable implements IAnimal
     @Inject(method = "attackEntityFrom", at = @At("RETURN"))
     public void attackEntityFrom(Damage damage, CallbackInfoReturnable<EntityDamageResult> cir) {
         if (damage.getSource().getResponsibleEntity() instanceof EntityPlayer player) {
-            ItemStack itemStack1 = BaublesApi.getBaubles(player).getStackInSlot(1);
-            ItemStack itemStack2 = BaublesApi.getBaubles(player).getStackInSlot(2);
-            if (itemStack1 != null && itemStack1.getItem() instanceof ClayRing) {
-                this.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 40, 1, true));
-            }
-            if (itemStack2 != null && itemStack2.getItem() instanceof ClayRing) {
+            int clayRingCount = BaubleSlotHelper.countRingsOfType(player, Items.CLAY_RING);
+            if (clayRingCount > 0) {
                 this.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 40, 1, true));
             }
         }

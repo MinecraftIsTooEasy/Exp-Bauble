@@ -1,10 +1,9 @@
 package limingzxc.exp_baubles.mixin;
 
-import baubles.api.BaublesApi;
-import limingzxc.exp_baubles.items.ring.DirtRing;
+import baubles.api.BaubleSlotHelper;
+import limingzxc.exp_baubles.items.Items;
 import net.minecraft.EntityPlayer;
 import net.minecraft.FoodStats;
-import net.minecraft.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,30 +19,9 @@ public class FoodStatsMixin {
     @Overwrite
     public int getNutritionLimit() {
         int nutritionLimit = Math.max(Math.min(6 + this.player.getExperienceLevel() / 5 * 2, 20), 6);
-        ItemStack itemStack1 = BaublesApi.getBaubles(player).getStackInSlot(1);
-        ItemStack itemStack2 = BaublesApi.getBaubles(player).getStackInSlot(2);
-        if (itemStack1 != null && itemStack1.getItem() instanceof DirtRing) {
-            nutritionLimit += 2;
-        }
-        if (itemStack2 != null && itemStack2.getItem() instanceof DirtRing) {
-            nutritionLimit += 2;
-        }
+        // Count how many dirt rings the player has equipped
+        int dirtRingCount = BaubleSlotHelper.countRingsOfType(player, Items.DIRT_RING);
+        nutritionLimit += dirtRingCount * 2;
         return nutritionLimit;
     }
-
-//    @Inject(method = "addFoodValue", at = @At(value = "INVOKE",
-//            target = "Lnet/minecraft/EntityPlayer;getAsEntityPlayerMP()Lnet/minecraft/ServerPlayer;"),
-//            cancellable = true)
-//    public void addFoodValue(Item item, CallbackInfo ci) {
-//        if (this.player instanceof ServerPlayer) {
-//            ItemStack itemStack1 = BaublesApi.getBaubles(player).getStackInSlot(1);
-//            ItemStack itemStack2 = BaublesApi.getBaubles(player).getStackInSlot(2);
-//            if (itemStack1 != null && itemStack1.getItem() instanceof DirtRing) {
-//                ci.cancel();
-//            }
-//            if (itemStack2 != null && itemStack2.getItem() instanceof DirtRing) {
-//                ci.cancel();
-//            }
-//        }
-//    }
 }

@@ -4,7 +4,7 @@
   "version": "${version}",
   "depends": {
     "fishmodloader": ">=3.3.0",
-    "baubles": ">=1.0.5"
+    "baubles": ">=1.1.1"
   },
   "environment": "*",
   "name": "Exp-Baubles",

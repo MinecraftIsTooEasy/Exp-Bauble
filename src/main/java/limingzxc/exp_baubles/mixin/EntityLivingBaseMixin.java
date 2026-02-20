@@ -1,9 +1,7 @@
 package limingzxc.exp_baubles.mixin;
 
-import baubles.api.BaublesApi;
-import limingzxc.exp_baubles.items.amulet.MithrilAmulet;
-import limingzxc.exp_baubles.items.ring.CopperRing;
-import limingzxc.exp_baubles.items.ring.IronRing;
+import baubles.api.BaubleSlotHelper;
+import limingzxc.exp_baubles.items.Items;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -46,8 +44,7 @@ public abstract class EntityLivingBaseMixin extends Entity {
     public float getAllSilverArmorCoverage(EntityLivingBase entityLivingBase) {
         float silverArmorCoverage = getSilverArmorCoverage();
         if (entityLivingBase instanceof EntityPlayer player) {
-            if (BaublesApi.getBaubles(player).getStackInSlot(0) != null
-                    && BaublesApi.getBaubles(player).getStackInSlot(0).hasMaterial(Material.silver)) {
+            if (BaubleSlotHelper.hasAmuletOfType(player, Items.SILVER_AMULET)) {
                 silverArmorCoverage += 0.5f;
             }
         }
@@ -61,14 +58,11 @@ public abstract class EntityLivingBaseMixin extends Entity {
         }
         if (((EntityLivingBase)(Object) this) instanceof EntityPlayer player) {
             int total_protection = 0;
-            ItemStack itemStack1 = BaublesApi.getBaubles(player).getStackInSlot(1);
-            ItemStack itemStack2 = BaublesApi.getBaubles(player).getStackInSlot(2);
-            if (itemStack1 != null && (itemStack1.getItem() instanceof CopperRing || itemStack1.getItem() instanceof IronRing)) {
-                total_protection += 1;
-            }
-            if (itemStack2 != null && (itemStack2.getItem() instanceof CopperRing || itemStack2.getItem() instanceof IronRing)) {
-                total_protection += 1;
-            }
+            // Count copper and iron rings in both ring slots
+            int copperRingCount = BaubleSlotHelper.countRingsOfType(player, Items.COPPER_RING);
+            int ironRingCount = BaubleSlotHelper.countRingsOfType(player, Items.IRON_RING);
+            total_protection += copperRingCount + ironRingCount;
+
             cir.setReturnValue(cir.getReturnValue() + total_protection);
         }
     }
@@ -77,8 +71,7 @@ public abstract class EntityLivingBaseMixin extends Entity {
     public int moreXpDrop(EntityLivingBase entityLivingBase) {
         int xp = this.getExperienceValue();
         if (!this.isEntityPlayer() && this.attackingPlayer != null
-                && BaublesApi.getBaubles(this.attackingPlayer).getStackInSlot(0) != null
-                && BaublesApi.getBaubles(this.attackingPlayer).getStackInSlot(0).getItem() instanceof MithrilAmulet) {
+                && BaubleSlotHelper.hasAmuletOfType(this.attackingPlayer, Items.MITHRIL_AMULET)) {
             return (int) (xp * 1.5);
         }
         return xp;
