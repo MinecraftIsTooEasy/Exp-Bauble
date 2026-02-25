@@ -9,15 +9,21 @@
   "environment": "*",
   "name": "Exp-Baubles",
   "description": "Add a series of uncanny baubles.",
-  "authors": ["limingzxc"],
+  "authors": [
+    "limingzxc"
+  ],
   "entrypoints": {
-    "preLaunch": ["limingzxc.exp_baubles.ExpBaubles"],
-    "main": ["limingzxc.exp_baubles.ExpBaubles"]
+    "preLaunch": [
+      "limingzxc.exp_baubles.ExpBaubles"
+    ],
+    "main": [
+      "limingzxc.exp_baubles.ExpBaubles"
+    ]
   },
   "mixins": [
     "exp_baubles.mixin.json"
   ],
-  "accessWidener": "exp_baubles.accesswidener",
+  "accessWidener": "exp_baubles.accessWidener",
   "custom": {
     "loom:injected_interfaces": {
     }
