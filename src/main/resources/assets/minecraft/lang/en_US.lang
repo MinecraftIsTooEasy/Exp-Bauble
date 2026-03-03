@@ -22,3 +22,24 @@ item.night_vision_goggle.description=A vision enhancement.
 item.mithril_amulet.description=It grants you more experience gained during combat and mining.
 
 item.gold_belt.description=It makes you look "shiny" and insulates you from some magma, but it can cause burns.
+
+emi.night_vision_goggle.desc=Grants the wearer a permanent Night Vision effect.
+emi.night_vision_goggle.obtain=Source: Nether Fortress chest, or 1% drop from bat-type mobs.
+
+emi.copper_ring.obtain=Source: Can be crafted or found in loot chests.
+emi.dirt_ring.obtain=Source: Crafted from dirt items
+emi.clay_ring.obtain=Source: Crafted from clay items
+emi.dragon_ring.obtain=Source: Extremely rare loot; endgame content.
+emi.iron_ring.obtain=Source: Crafted from iron; occasionally found in dungeon chests.
+emi.silver_amulet.obtain=Source: Crafted from silver materials; sometimes in dungeon chests.
+emi.mithril_amulet.obtain=Source: Crafted from mithril materials
+emi.gold_belt.obtain=Source: Crafted from gold materials; sometimes in dungeon chests.
+
+emi.copper_ring.desc=Makes your armor harder but slightly more brittle.
+emi.dirt_ring.desc=Expands the wearer’s stomach.
+emi.clay_ring.desc=Applies a slowing effect to attacks against animals.
+emi.dragon_ring.desc=Draws on the power of dragon flight at a high experience cost.
+emi.iron_ring.desc=Reduces damage taken by armor and tools.
+emi.silver_amulet.desc=Effective against undead and deters vampires.
+emi.mithril_amulet.desc=Increases experience gained from combat and mining.
+emi.gold_belt.desc=Makes you look shiny and offers partial magma insulation.

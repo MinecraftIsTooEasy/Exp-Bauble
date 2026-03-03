@@ -33,7 +33,7 @@ public abstract class WorldGenDungeonsMixin extends WorldGenerator {
 
         );
         chest_contents_for_underworld = WeightedRandomChestContent.func_92080_a(chest_contents_for_underworld,
-                new WeightedRandomChestContent(Items.NIGHT_VISION_GOGGLES.itemID, 0, 1, 1, 1),
+//                new WeightedRandomChestContent(Items.NIGHT_VISION_GOGGLES.itemID, 0, 1, 1, 1),
                 new WeightedRandomChestContent(baubles.common.items.Items.RING.itemID, 0, 1, 1, 1)
         );
     }

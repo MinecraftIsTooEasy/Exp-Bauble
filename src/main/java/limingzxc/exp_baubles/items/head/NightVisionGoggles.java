@@ -1,10 +1,10 @@
 package limingzxc.exp_baubles.items.head;
 
 import baubles.api.BaubleType;
-import limingzxc.exp_baubles.items.ItemExpBaubles;
+import limingzxc.exp_baubles.items.ItemBaseBaubles;
 import net.minecraft.*;
 
-public class NightVisionGoggles extends ItemExpBaubles {
+public class NightVisionGoggles extends ItemBaseBaubles {
     public NightVisionGoggles(int id) {
         super(id, Material.grass, "night_vision_goggle");
     }
@@ -14,24 +14,11 @@ public class NightVisionGoggles extends ItemExpBaubles {
         return BaubleType.HEAD;
     }
 
-    @Override
-    public int canEquipExperienceLevel() {
-        return 0;
-    }
-
     public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-        if (player instanceof EntityPlayer entityPlayer) {
+        if (player instanceof EntityPlayer) {
             if (player.ticksExisted % 200 == 0) {
-                if (entityPlayer.experience >= getLessExperienceValue()) {
-                    player.addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 400, 0));
-                    entityPlayer.addExperience(-this.getLessExperienceValue(), false, true);
-                }
+                player.addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 400, 0));
             }
         }
-    }
-
-    @Override
-    public int getLessExperienceValue() {
-        return 3;
     }
 }

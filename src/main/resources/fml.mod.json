@@ -18,12 +18,15 @@
     ],
     "main": [
       "limingzxc.exp_baubles.ExpBaubles"
+    ],
+    "emi": [
+      "limingzxc.exp_baubles.emi.ExpBaublesEmiPlugin"
     ]
   },
   "mixins": [
     "exp_baubles.mixin.json"
   ],
-  "accessWidener": "exp_baubles.accessWidener",
+  "accessWidener": "exp_baubles.accesswidener",
   "custom": {
     "loom:injected_interfaces": {
     }

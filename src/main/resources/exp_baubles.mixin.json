@@ -10,6 +10,7 @@
     "EntityAnimalMixin",
     "EntityBatMixin",
     "EntityDamageSourceMixin",
+    "EntityLivingBaseDropBaublesMixin",
     "EntityLivingBaseMixin",
     "EntityMixin",
     "EntityPigZombieMixin",
