@@ -2,7 +2,8 @@ package limingzxc.exp_baubles.items.ring;
 
 import baubles.api.BaubleType;
 import limingzxc.exp_baubles.items.ItemNormalBaubles;
-import net.minecraft.*;
+import net.minecraft.ItemStack;
+import net.minecraft.Material;
 
 public class DirtRing extends ItemNormalBaubles {
     public DirtRing(int id) {
@@ -17,13 +18,5 @@ public class DirtRing extends ItemNormalBaubles {
     @Override
     public int getExperienceValue() {
         return 0;
-    }
-
-    @Override
-    public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
-        if (player instanceof EntityPlayer entityPlayer) {
-            entityPlayer.getFoodStats().setNutrition(0, false);
-            entityPlayer.getFoodStats().setSatiation(0, false);
-        }
     }
 }
